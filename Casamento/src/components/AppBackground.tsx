@@ -1,6 +1,7 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import { AppDock } from "./AppDock";
+import { CustomText } from "./CustomText";
 
 interface IAppBackground {
     children?: React.ReactNode
@@ -9,10 +10,22 @@ interface IAppBackground {
 export const AppBackground = (props: IAppBackground) => {
     return(
         <View style = { StyleAppBackground.Background }>
-            <AppDock></AppDock>
-            <View style = {StyleAppBackground.Sheet }>
-                {props.children}
+
+            <View style = { StyleAppBackground.Sheet }>
+
+                <View style = { StyleAppBackground.WhiteSheet }>
+                    {props.children}
+                </View>
+
+                <View style = { StyleAppBackground.Label }>
+                    <CustomText
+                        text = {"Carol & Dai"}
+                        style = {"Borel"}
+                    />
+                </View>
+
             </View>
+
         </View>
     );
 }
@@ -20,16 +33,22 @@ export const AppBackground = (props: IAppBackground) => {
 const StyleAppBackground = StyleSheet.create({
     Background: {
         flex: 1,
-        backgroundColor: "#c3f1be"
+        backgroundColor: "#B0D5A2"
     },
     Sheet: {
-        alignItems: 'center',
-        borderLeftWidth: 6,
-        borderColor: '#645512',
-        padding: 20,
+        margin: 10,
         flex: 1,
-        borderTopEndRadius : 50,
-        borderTopStartRadius : 50,
-        backgroundColor: "#eeffef"
+        borderRadius: 25,
+        backgroundColor: "#D1E9C8"
+    },
+    WhiteSheet: {
+        padding: 6,
+        margin: 10,
+        flex: 1,
+        borderRadius: 15,
+        backgroundColor: "#FFFFFF"
+    },
+    Label: {
+        alignItems: 'center'
     }
 })
