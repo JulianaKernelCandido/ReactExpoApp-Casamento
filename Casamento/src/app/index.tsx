@@ -1,4 +1,5 @@
 import { AppBackground } from "@/components/AppBackground";
+import { CustomText } from "@/components/CustomText";
 import { useFonts } from 'expo-font';
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 
@@ -13,20 +14,15 @@ export default function HomeScreen() {
       <ScrollView>
         <View style={style.container}>
 
-          <Text style={{
-            marginTop: 12,
-            fontFamily: 'CursiveFont',
-            color: '#645512',
-            fontSize: 64
-          }}>Carol & Dai </Text>
+          <CustomText
+            text = {"Carol & Dai"}
+            style = {"BigCursive"}
+          />          
 
-          <Text style={{
-            fontFamily: 'WriteMachineFont',
-            color: '#645512',
-            fontSize: 20,
-            marginTop: -10
-          }}>
-            ________________</Text>
+          <CustomText
+            text = {"________________"}
+            style = {"Regular"}
+          />  
 
           <Text style={{
             textAlign: 'center',
